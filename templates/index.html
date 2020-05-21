@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Web Scraping</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+      .box{
+          border-radius: 10px;
+          width: auto;
+          padding: 20px;
+          margin-bottom: 50px;
+          border: 1px solid gray;
+          margin: 0;
+      }
+      .news{
+          margin-top: 1px;
+      }
+      .heading{
+          text-align: center;
+      }
+      .card-img-top{
+          max-width: 100%;
+          max-height: 50%;
+      }
+      h4, h3, h2{
+          font-weight: bold ;
+      }
+      .col-lg-4{
+          padding-left: 60px;
+          padding-right: 10px;
+          margin-bottom: 20px;
+          margin-top: 20px;
+      }
+      .card{
+          border: 1px solid grey;
+          width:auto;
+          margin: 15%;
+          margin-top: 0px;
+      }
+      .col-md-6{
+          align-items: center;
+      }
+  </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <h1>Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        </div>
+        <div class="container-fluid">
+            <div class="col-12">
+            <h2>Latest Mars News</h2>
+            <h4>{{mars.news_title}}</h4>
+            <p, class="news">{{mars.news_para}}</p>
+            </div>
+            <div class="row">
+            <div class="col-lg-8 col-sm-12">
+            <h3>Featured Mars Image</h3>
+            <img src= "{{mars.featured_img_url}}" alt="Featured_image", width= 100%, height= 100%;>
+            </div>
+            
+            <div class="col-lg-4 col-sm-12">
+                <div class="box">
+                <h4>Current Weather on Mars</h4>
+                <p>{{mars.weather}}</p>
+                </div>
+                <h4>Mars Facts</h4>
+                <span>{{mars.facts | safe}}</span>
+
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="container-fluid">
+            <h4 class="heading">Mars Hemispheres</h4>
+                <hr>
+                <div class="row">
+                {% for item in mars.hemisphere %}
+                <div class="col-lg-6">
+                <div class="card">
+                <img class="card-img-top" src="{{ item.img_url }}"  alt="{{ item.title }}" class="center">
+                <div class="card-body">
+                    <h4 class="card-title"><b>{{item.title}}</b></h4>
+                </div>
+                </div>
+            </div>
+
+                {% endfor %}
+                </div>
+    </div>
+</div>
+</body>
+</html>
+

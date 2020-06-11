@@ -2,7 +2,7 @@
 The application created in this project scrapes 5 different websites for latest information on Mars and displays it on a HTML page.
 
 ## Narrative
-1. Using beautiful soup and chromedriver, scraped 5 websites for required information and then saved the same in a python file and created a function to automate the process.
+1. Using beautiful soup and chromedriver, scraped 5 websites for relevant information, saved the same in a python file and created a function to automate the process.
 2. In a flask application, used Pymongo to save the scraped information and created routes for home page and info page 
 3. Created a HTML page and used jinja to obtain data from mongodb.  
 

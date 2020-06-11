@@ -29,7 +29,7 @@ The application created in this project scrapes 5 different websites for latest 
 5. Go to "localhost:5000" in your Chrome
 
 6. A webpage will load, click on Scrape New Data button.
-    Note:- It will take few minutes to load the webpage due to an added functionality that lets the application run with lower internet bandwidths.
+    - Note:- It will take few minutes to load the webpage due to an added functionality that lets the application run with lower internet bandwidths.
 
 ## Output
 
